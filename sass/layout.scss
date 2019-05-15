@@ -1,0 +1,277 @@
+// GENERAL/RESET
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(49, 27, 146);
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+h1,h2,h3,ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  margin: auto;
+  width: 80vw;
+  height: 90vh;
+  position: relative;
+}
+
+
+
+// NAVBAR SECTION
+.navbar {
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 15px;
+  -webkit-box-shadow: 3px 7px 5px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 3px 7px 5px 0px rgba(0,0,0,0.35);
+  box-shadow: 3px 7px 5px 0px rgba(0,0,0,0.35);
+
+  &__logo {
+    margin-left: 1rem;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  &__right-content {
+    width: 17rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  &__button {
+    border: 1px solid #fff;
+    padding: .5rem 3rem;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 15px;
+
+    &:hover {
+      background: rgb(63, 81, 181);
+    }
+  }
+}
+
+// SECTION LAYOUT PART
+.section {
+  width: 80vw;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: row;
+  &__row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__column-1-of-2 {
+    width: 400px;
+    -webkit-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
+    margin-bottom: 1rem;
+  }
+  &__column-2-of-3 {
+    width: 830px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    @media only screen and (max-width: 1350px) {
+      & {
+        width: 100%;
+        align-items: center;
+        justify-content: space-around;
+      }
+    }
+  }
+  &__column-1-of-3 {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    @media only screen and (max-width: 1350px) {
+      & {
+        margin-top: 3rem;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+    }
+  }
+  .column-inc-exp {
+    width: 250px;
+    height: 8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 2rem;
+    transition: all .5s ease-in-out;
+    .inc-green {
+      color: lighten(green, 5%);
+    }
+    .exp-red {
+      color: lighten(red, 10%);
+    }
+    h2 {
+      font-size: 2rem;
+    }
+    &:hover {
+       transform: scale(1.1);
+       cursor: pointer;
+    }
+  }
+}
+
+// SECTION STYLE PART
+.section {
+  &__ul {
+    width: 100%;
+    height: auto;
+    -webkit-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
+    box-shadow: 0px 2px 5px 2px rgba(0,0,0,0.75);
+  }
+  &__li {
+    width: 90%;
+    margin: .5rem auto;
+    padding: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &:hover {
+      background: rgba(0,0,0,.1);
+      cursor: pointer;
+    }
+  }
+  &__item-title {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  &__item-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  &__item-tools {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 6rem;
+  }
+  &-tool {
+    font-size: 1.6rem;
+    display: block;
+    &.red {
+      color: red;
+    }
+    &.green {
+      color: lighten(green, 10%);
+    }
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// MODAL WINDOW ADD NEW INCOME EXPENSE SECTION
+.modal {
+  width: 350px;
+  height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.35);
+  -moz-box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.35);
+  box-shadow: 2px 3px 5px 2px rgba(0,0,0,0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background: lighten(red, 15%);
+ &.hide {
+  display: none;
+ }
+  &-exit {
+    position: absolute;
+    top: .5rem;
+    right: .8rem;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+
+  &__form {
+    width: 90%;
+    height: 90%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+  }
+
+   &__header {
+     margin-top: 2rem;
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+     font-size: 1.5rem;
+   }
+
+   &__span:hover,
+     .current {
+     position: relative;
+     cursor: pointer;
+     &:before {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+      content: '';
+      width: 100%;
+      height: 10%;
+      border-bottom: 2px solid red;
+     }
+   }
+
+   &__content {
+     width: 100%;
+   }
+
+   &__input {
+     width: 100%;
+     margin: 1rem 0;
+     padding: .5rem;
+     &.error {
+       border: 2px solid red;
+     }
+   }
+
+}
+
+
+
+/**/

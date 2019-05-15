@@ -1,0 +1,23 @@
+{
+  "name": "personal-finance-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src/scripts/main.js -d lib",
+    "build-css": "sass --watch sass/layout.scss src/stylesheet/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "nodemon": "^1.19.0",
+    "sass": "^1.20.1"
+  }
+}
